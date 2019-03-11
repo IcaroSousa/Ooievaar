@@ -1,0 +1,6 @@
+﻿{
+  "redisNameSpace": "MP", 
+  "redisQueueName": "Ooievaar",
+  "redisHost": "localhost", 
+  "redisPort":  "6379"
+} 
