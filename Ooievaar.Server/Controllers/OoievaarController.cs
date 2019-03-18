@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Ooievaar.Common;
-using Ooievaar.Common.Classes;
 using Ooievaar.Common.Interfaces;
 
 namespace Ooievaar.Server.Controllers
@@ -14,25 +12,23 @@ namespace Ooievaar.Server.Controllers
     [ApiController]
     public class OoievaarController : Controller
     {
-        private readonly IConfiguration _config;
         private readonly IRedisQueue _redisQueue;
 
-        public OoievaarController(IConfiguration pConfig)
+        public OoievaarController(IRedisQueue pRedisQueue)
         {
-            _config = pConfig;
-            _redisQueue = new RedisQueue(_config);
+            _redisQueue = pRedisQueue;
         }
 
         [HttpGet]
         [Route("/Ping")]
-        public JsonResult Ping() 
+        public JsonResult Ping()
         {
             return Json("Pong...");
         }
 
         [HttpPost]
         [Route("/EnqueueItem")]
-        public void EnqueueItem([FromBody] ReleaseDTO pItem) 
+        public void EnqueueItem([FromBody] ReleaseDTO pItem)
         {
             string releaseJson = JsonConvert.SerializeObject(pItem);
             _redisQueue.Enqueue(releaseJson);
@@ -40,7 +36,7 @@ namespace Ooievaar.Server.Controllers
 
         [HttpGet]
         [Route("/DequeueItem")]
-        public JsonResult DequeueItem() 
+        public JsonResult DequeueItem()
         {
             string releaseJson = _redisQueue.Dequeue();
             if (string.IsNullOrWhiteSpace(releaseJson))
@@ -60,7 +56,7 @@ namespace Ooievaar.Server.Controllers
 
         [HttpGet]
         [Route("/GetListFromQueue")]
-        public JsonResult GetListFromQueue() 
+        public JsonResult GetListFromQueue()
         {
             IList<string> itens = _redisQueue.GetListFromQueue();
             return Json(itens);

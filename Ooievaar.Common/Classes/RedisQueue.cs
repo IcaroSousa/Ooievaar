@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Extensions.Configuration;
 using Ooievaar.Common.Interfaces;
@@ -8,10 +9,10 @@ namespace Ooievaar.Common.Classes
 {
     public class RedisQueue : IRedisQueue
     {
-        private readonly string _nameSpace;
+        private readonly string _namespace;
         private readonly string _queueName;
 
-        private string _key => string.Format($"{_nameSpace}:{_queueName}");
+        private string _key => string.Format($"{_namespace}:{_queueName}");
 
         private IDatabase _redis { get; set; }
 
@@ -19,13 +20,16 @@ namespace Ooievaar.Common.Classes
         protected long QueueSize => _redis.ListLength(_key);
 
         public RedisQueue(IConfiguration pConfig)
-        {        
-            _nameSpace = pConfig["redisNameSpace"];
-            _queueName = pConfig["redisQueueName"];
+        {
+            _namespace = pConfig["redis_namespace"];
+            _queueName = pConfig["redis_queuename"];
 
             _redis = ConnectionMultiplexer
-            .Connect($"{pConfig["redisHost"]}:{pConfig["redisPort"]}")
+            .Connect($"{pConfig["redis_host"]}:{pConfig["redis_port"]}")
             .GetDatabase();
+
+            Console.WriteLine($"Redis server -> {pConfig["redisHost"]}:{pConfig["redisPort"]}");
+            Console.WriteLine($"Redis key -> {_key}");
         }
 
         public void Enqueue(string pValue)
