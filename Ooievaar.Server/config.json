@@ -1,5 +1,4 @@
 ﻿{
-  "redis_namespace": "MP",
   "redis_queuename": "Ooievaar",
   "redis_host": "localhost",
   "redis_port": "6379"

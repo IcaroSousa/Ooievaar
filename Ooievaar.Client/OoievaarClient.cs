@@ -45,7 +45,7 @@ namespace Ooievaar.Client
             {
                 consoleSpinner.Turn("Aguardando release", pAnimationSequence: 1);
 
-                string releaseItem = string.Empty; //_redisQueue.Dequeue();
+                string releaseItem = _redisQueue.Dequeue();
 
                 if (!string.IsNullOrWhiteSpace(releaseItem))
                 {

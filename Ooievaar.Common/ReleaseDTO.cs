@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text.RegularExpressions;
+
 namespace Ooievaar.Common
 {
     public class ReleaseDTO : IDisposable
@@ -11,6 +13,13 @@ namespace Ooievaar.Common
             Regressive = pRegressive;
         }
 
+        private string ExtractUserFromEmail(String pEmail)
+        {
+            string _pattern = @"(\w+\.?\w+)";
+            Regex _regex = new Regex(_pattern);
+            return _regex.Match(Responsible).Value;
+        }
+
         public string Version { get; set; }
         public string Responsible { get; set; }
         public string Client { get; set; }
@@ -18,7 +27,7 @@ namespace Ooievaar.Common
 
         public override string ToString()
         {
-            return string.Format($"{Version} {Responsible} {Client} {Regressive}");
+            return string.Format($"{Version} {ExtractUserFromEmail(Responsible)} {Client} {Regressive}");
         }
 
         public void Dispose() { }
