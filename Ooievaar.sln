@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ooievaar.Common", "Ooievaar.Common\Ooievaar.Common.csproj", "{40264D9C-9426-41A6-B3E9-92E6E44645B1}"
@@ -14,6 +14,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		dockerfile = dockerfile
 		Entrypoint.sh = Entrypoint.sh
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ooievar.Domain", "src\Ooievar.Domain.csproj", "{88A8B3DE-1D70-4992-9AC0-20BC93189957}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ooievar.Application", "src\Ooievar.Application.csproj", "{478ED381-F309-4DD3-96CF-4F994742246D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{120EC19B-B3C2-4795-85E8-B40427C13389}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ooievar.Application", "src\Ooievar.Application\Ooievar.Application.csproj", "{E4A2749E-3011-4806-8C19-520DFC26F419}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ooievar.Data", "src\Ooievar.Data\Ooievar.Data.csproj", "{D9585EB1-0848-481C-83E3-6A6139CB6DEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ooievar.Domain", "src\Ooievar.Domain\Ooievar.Domain.csproj", "{45A90BE1-EADD-48DC-8A12-35164D65FFE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ooievar.Infrastructure", "src\Ooievar.Infrastructure\Ooievar.Infrastructure.csproj", "{25F1DB53-72DF-4AF9-9EAE-70F5A2531838}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,5 +51,35 @@ Global
 		{007E7769-693B-4536-9A43-565A13B51A45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{007E7769-693B-4536-9A43-565A13B51A45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{007E7769-693B-4536-9A43-565A13B51A45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88A8B3DE-1D70-4992-9AC0-20BC93189957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88A8B3DE-1D70-4992-9AC0-20BC93189957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88A8B3DE-1D70-4992-9AC0-20BC93189957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88A8B3DE-1D70-4992-9AC0-20BC93189957}.Release|Any CPU.Build.0 = Release|Any CPU
+		{478ED381-F309-4DD3-96CF-4F994742246D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{478ED381-F309-4DD3-96CF-4F994742246D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{478ED381-F309-4DD3-96CF-4F994742246D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{478ED381-F309-4DD3-96CF-4F994742246D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4A2749E-3011-4806-8C19-520DFC26F419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4A2749E-3011-4806-8C19-520DFC26F419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4A2749E-3011-4806-8C19-520DFC26F419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4A2749E-3011-4806-8C19-520DFC26F419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9585EB1-0848-481C-83E3-6A6139CB6DEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9585EB1-0848-481C-83E3-6A6139CB6DEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9585EB1-0848-481C-83E3-6A6139CB6DEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9585EB1-0848-481C-83E3-6A6139CB6DEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45A90BE1-EADD-48DC-8A12-35164D65FFE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45A90BE1-EADD-48DC-8A12-35164D65FFE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45A90BE1-EADD-48DC-8A12-35164D65FFE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45A90BE1-EADD-48DC-8A12-35164D65FFE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25F1DB53-72DF-4AF9-9EAE-70F5A2531838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25F1DB53-72DF-4AF9-9EAE-70F5A2531838}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25F1DB53-72DF-4AF9-9EAE-70F5A2531838}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25F1DB53-72DF-4AF9-9EAE-70F5A2531838}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E4A2749E-3011-4806-8C19-520DFC26F419} = {120EC19B-B3C2-4795-85E8-B40427C13389}
+		{D9585EB1-0848-481C-83E3-6A6139CB6DEB} = {120EC19B-B3C2-4795-85E8-B40427C13389}
+		{45A90BE1-EADD-48DC-8A12-35164D65FFE6} = {120EC19B-B3C2-4795-85E8-B40427C13389}
+		{25F1DB53-72DF-4AF9-9EAE-70F5A2531838} = {120EC19B-B3C2-4795-85E8-B40427C13389}
 	EndGlobalSection
 EndGlobal

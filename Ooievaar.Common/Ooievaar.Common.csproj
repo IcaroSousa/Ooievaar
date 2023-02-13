@@ -1,18 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard7.0</TargetFramework>
     <OutputType>Library</OutputType>
     <ReleaseVersion>1.0</ReleaseVersion>
-    <SynchReleaseVersion>false</SynchReleaseVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Class1.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="StackExchange.Redis" Version="2.0.519" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.1.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
